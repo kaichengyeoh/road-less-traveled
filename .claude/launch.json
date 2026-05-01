@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "site-preview",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["-m", "http.server", "8080", "--directory", "docs"],
+      "port": 8080
+    },
+    {
+      "name": "site-build",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["docs/build.py"],
+      "port": 0
+    }
+  ]
+}

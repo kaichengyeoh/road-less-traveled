@@ -1,0 +1,15 @@
+# EPUB source (large binary, not needed for GitHub Pages)
+*.epub
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+*.swp
