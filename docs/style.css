@@ -7,17 +7,17 @@
 
 /* ---------- CSS Variables ---------- */
 :root {
-  --bg:          #0d0d0b;
-  --bg-card:     #141410;
-  --bg-hover:    #1a1a16;
-  --border:      #2a2a22;
-  --text:        #d6ccbc;
-  --text-muted:  #7a7264;
-  --text-dim:    #9a9082;
+  --bg:          #1c1c1e;
+  --bg-card:     #242424;
+  --bg-hover:    #2c2c2e;
+  --border:      #383838;
+  --text:        #e8e0d0;
+  --text-muted:  #8a8478;
+  --text-dim:    #b0a898;
   --accent:      #c8a96e;
   --accent-dim:  #9a7d4a;
-  --accent-glow: rgba(200, 169, 110, 0.12);
-  --quote-bg:    rgba(200, 169, 110, 0.06);
+  --accent-glow: rgba(200, 169, 110, 0.14);
+  --quote-bg:    rgba(200, 169, 110, 0.10);
   --font-serif:  'Noto Serif TC', 'Georgia', serif;
   --font-sans:   'Noto Sans TC', 'system-ui', sans-serif;
   --radius:      6px;
@@ -29,7 +29,7 @@
 /* ---------- Reset ---------- */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-html { font-size: 16px; scroll-behavior: smooth; }
+html { font-size: 18px; scroll-behavior: smooth; }
 
 body {
   background: var(--bg);
@@ -65,14 +65,14 @@ img { display: block; max-width: 100%; }
   justify-content: space-between;
   position: sticky;
   top: 0;
-  background: rgba(13, 13, 11, 0.92);
+  background: rgba(28, 28, 30, 0.94);
   backdrop-filter: blur(8px);
   z-index: 50;
 }
 
 .site-header .logo {
   font-family: var(--font-sans);
-  font-size: 0.82rem;
+  font-size: 0.78rem;
   font-weight: 400;
   color: var(--text-muted);
   letter-spacing: 0.06em;
@@ -86,7 +86,7 @@ img { display: block; max-width: 100%; }
 
 .nav-home {
   font-family: var(--font-sans);
-  font-size: 0.78rem;
+  font-size: 0.72rem;
   font-weight: 400;
   color: var(--text-muted);
   letter-spacing: 0.04em;
@@ -126,7 +126,7 @@ img { display: block; max-width: 100%; }
 .index-hero p.subtitle {
   margin-top: 1rem;
   font-family: var(--font-sans);
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   color: var(--text-muted);
   letter-spacing: 0.05em;
 }
@@ -142,7 +142,7 @@ img { display: block; max-width: 100%; }
 .section-group {
   max-width: var(--max-index);
   margin: 0 auto;
-  padding: 2rem 2rem 3rem;
+  padding: 2.5rem 2rem 3.5rem;
 }
 
 .section-group + .section-group {
@@ -151,7 +151,7 @@ img { display: block; max-width: 100%; }
 
 .section-label {
   font-family: var(--font-sans);
-  font-size: 0.7rem;
+  font-size: 0.65rem;
   font-weight: 500;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -160,38 +160,37 @@ img { display: block; max-width: 100%; }
 }
 
 .section-title {
-  font-size: 1.25rem;
-  font-weight: 300;
+  font-size: 1.3rem;
+  font-weight: 400;
   color: var(--text);
   margin-bottom: 0.5rem;
 }
 
 .section-desc {
   font-family: var(--font-sans);
-  font-size: 0.82rem;
+  font-size: 0.8rem;
   color: var(--text-muted);
   margin-bottom: 2rem;
-  line-height: 1.6;
+  line-height: 1.65;
 }
 
 /* Chapter Card Grid */
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 1px;
-  background: var(--border);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  overflow: hidden;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  gap: 8px;
+  background: var(--bg);
 }
 
 .chapter-card {
   background: var(--bg-card);
-  padding: 1.4rem 1.6rem;
+  padding: 1.8rem 2rem;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
-  transition: background var(--transition);
+  gap: 0.55rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  transition: background var(--transition), border-color var(--transition);
   cursor: pointer;
   text-decoration: none;
   color: inherit;
@@ -199,19 +198,20 @@ img { display: block; max-width: 100%; }
 
 .chapter-card:hover {
   background: var(--bg-hover);
+  border-color: var(--accent-dim);
   color: inherit;
 }
 
 .card-num {
   font-family: var(--font-sans);
-  font-size: 0.68rem;
+  font-size: 0.65rem;
   font-weight: 400;
   color: var(--accent-dim);
   letter-spacing: 0.1em;
 }
 
 .card-title {
-  font-size: 0.92rem;
+  font-size: 1.05rem;
   font-weight: 400;
   color: var(--text);
   line-height: 1.5;
@@ -225,12 +225,12 @@ img { display: block; max-width: 100%; }
 }
 
 .card-takeaway {
-  margin-top: 0.4rem;
+  margin-top: 0.5rem;
   font-family: var(--font-sans);
-  font-size: 0.78rem;
+  font-size: 0.88rem;
   color: var(--text-dim);
-  line-height: 1.5;
-  padding-top: 0.6rem;
+  line-height: 1.6;
+  padding-top: 0.7rem;
   border-top: 1px solid var(--border);
 }
 
@@ -249,14 +249,14 @@ img { display: block; max-width: 100%; }
 
 /* Chapter metadata header */
 .chapter-meta {
-  margin-bottom: 3rem;
+  margin-bottom: 3.5rem;
   padding-bottom: 2rem;
   border-bottom: 1px solid var(--border);
 }
 
 .chapter-num {
   font-family: var(--font-sans);
-  font-size: 0.7rem;
+  font-size: 0.65rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--accent-dim);
@@ -264,7 +264,7 @@ img { display: block; max-width: 100%; }
 }
 
 .chapter-meta h1 {
-  font-size: clamp(1.4rem, 3vw, 1.9rem);
+  font-size: clamp(1.5rem, 3vw, 2rem);
   font-weight: 300;
   letter-spacing: 0.02em;
   line-height: 1.4;
@@ -274,54 +274,54 @@ img { display: block; max-width: 100%; }
 
 .chapter-original {
   font-family: var(--font-sans);
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   color: var(--text-muted);
   font-style: italic;
-  margin-bottom: 1.4rem;
+  margin-bottom: 1.5rem;
 }
 
 /* Takeaway banner */
 .takeaway-banner {
   background: var(--accent-glow);
   border-left: 2px solid var(--accent);
-  padding: 0.9rem 1.2rem;
+  padding: 1rem 1.3rem;
   border-radius: 0 var(--radius) var(--radius) 0;
   font-family: var(--font-sans);
-  font-size: 0.88rem;
+  font-size: 0.92rem;
   color: var(--accent);
-  line-height: 1.6;
+  line-height: 1.65;
 }
 
 .takeaway-banner strong {
   font-weight: 500;
   margin-right: 0.4em;
   opacity: 0.7;
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
 /* Chapter body sections */
 .chapter-section {
-  margin-bottom: 3rem;
+  margin-bottom: 3.5rem;
 }
 
 .chapter-section h2 {
   font-family: var(--font-sans);
-  font-size: 0.72rem;
+  font-size: 0.68rem;
   font-weight: 500;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--accent-dim);
-  margin-bottom: 1.4rem;
+  margin-bottom: 1.5rem;
   padding-bottom: 0.6rem;
   border-bottom: 1px solid var(--border);
 }
 
 .chapter-section p {
-  font-size: 0.97rem;
-  line-height: 2;
-  margin-bottom: 1.2em;
+  font-size: 1rem;
+  line-height: 1.9;
+  margin-bottom: 1.4em;
   color: var(--text);
 }
 
@@ -331,11 +331,11 @@ img { display: block; max-width: 100%; }
 }
 
 .chapter-section ul li {
-  font-size: 0.93rem;
-  line-height: 1.8;
-  padding: 0.5rem 0 0.5rem 1.4rem;
+  font-size: 0.95rem;
+  line-height: 1.85;
+  padding: 0.65rem 0 0.65rem 1.5rem;
   position: relative;
-  border-bottom: 1px solid rgba(42, 42, 34, 0.5);
+  border-bottom: 1px solid rgba(56, 56, 56, 0.6);
   color: var(--text);
 }
 
@@ -354,23 +354,23 @@ img { display: block; max-width: 100%; }
   background: var(--quote-bg);
   border-left: 2px solid var(--accent-dim);
   border-radius: 0 var(--radius) var(--radius) 0;
-  padding: 1.2rem 1.4rem;
-  margin-bottom: 1.2rem;
+  padding: 1.4rem 1.6rem;
+  margin-bottom: 1.4rem;
 }
 
 .section-quotes blockquote p.quote-en {
   font-style: italic;
-  font-size: 0.95rem;
+  font-size: 0.97rem;
   color: var(--text);
-  line-height: 1.8;
-  margin-bottom: 0.6rem;
+  line-height: 1.85;
+  margin-bottom: 0.7rem;
 }
 
 .section-quotes blockquote p.quote-zh {
   font-family: var(--font-sans);
-  font-size: 0.82rem;
-  color: var(--text-muted);
-  line-height: 1.7;
+  font-size: 0.84rem;
+  color: var(--text-dim);
+  line-height: 1.75;
   margin: 0;
 }
 
@@ -383,11 +383,11 @@ img { display: block; max-width: 100%; }
 
 .section-reflection ol li {
   counter-increment: q;
-  font-size: 0.93rem;
-  line-height: 1.8;
-  padding: 0.7rem 0 0.7rem 2rem;
+  font-size: 0.95rem;
+  line-height: 1.85;
+  padding: 0.8rem 0 0.8rem 2rem;
   position: relative;
-  border-bottom: 1px solid rgba(42, 42, 34, 0.5);
+  border-bottom: 1px solid rgba(56, 56, 56, 0.6);
   color: var(--text-dim);
 }
 
@@ -398,9 +398,9 @@ img { display: block; max-width: 100%; }
   position: absolute;
   left: 0;
   font-family: var(--font-sans);
-  font-size: 0.68rem;
+  font-size: 0.65rem;
   color: var(--accent-dim);
-  top: 1.05rem;
+  top: 1.1rem;
   letter-spacing: 0.05em;
 }
 
@@ -440,7 +440,7 @@ img { display: block; max-width: 100%; }
 
 .nav-btn .nav-dir {
   font-family: var(--font-sans);
-  font-size: 0.65rem;
+  font-size: 0.62rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--accent-dim);
@@ -457,7 +457,7 @@ img { display: block; max-width: 100%; }
 /* Chapter progress indicator */
 .chapter-progress {
   font-family: var(--font-sans);
-  font-size: 0.7rem;
+  font-size: 0.68rem;
   color: var(--text-muted);
   text-align: center;
   margin-top: 1.5rem;
@@ -470,7 +470,7 @@ img { display: block; max-width: 100%; }
   padding: 2rem;
   text-align: center;
   font-family: var(--font-sans);
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   color: var(--text-muted);
   letter-spacing: 0.05em;
 }
@@ -479,11 +479,12 @@ img { display: block; max-width: 100%; }
 @media (max-width: 768px) {
   .site-header { padding: 1rem 1.2rem; }
   .index-hero { padding: 3rem 1.2rem 2rem; }
-  .section-group { padding: 1.5rem 1.2rem 2rem; }
+  .section-group { padding: 1.8rem 1.2rem 2.5rem; }
   .chapter-wrap { padding: 2.5rem 1.2rem 4rem; }
 
   .card-grid {
     grid-template-columns: 1fr;
+    gap: 6px;
   }
 
   .chapter-nav {
@@ -496,7 +497,7 @@ img { display: block; max-width: 100%; }
 }
 
 @media (max-width: 480px) {
-  html { font-size: 15px; }
+  html { font-size: 16px; }
 }
 
 /* ---------- Utility ---------- */
